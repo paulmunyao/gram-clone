@@ -6,4 +6,4 @@ from .forms import Inputform
 def home(request):
     return render(request, "home.html")
 
-def  get_user(request): 
+# def  get_user(request): 
