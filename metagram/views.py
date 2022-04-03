@@ -6,6 +6,9 @@ from .forms import Inputform
 def home(request):
     return render(request, "home.html")
 
+def login(request):
+    return render(request, "login.html")    
+
 def  get_user(request):
     if request.method == "POST":
         form = Inputform(request.POST)
