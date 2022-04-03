@@ -10,7 +10,10 @@ def login(request):
     return render(request, "login.html")   
 
 def signup(request):
-    return render(request, "signup.html")     
+    return render(request, "signup.html")   
+
+def display(request):
+    return render(request, "display.html")      
 
 def  get_user(request):
     if request.method == "POST":
