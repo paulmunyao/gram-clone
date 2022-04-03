@@ -6,4 +6,11 @@ from .forms import Inputform
 def home(request):
     return render(request, "home.html")
 
-# def  get_user(request): 
+def  get_user(request):
+    if request.method == "POST":
+        form = Inputform(request.POST)
+        if form.is_valid():
+            return render (request,"login.html",{'form':form})
+    else:
+        return render(request, "login.html", {'form':Inputform()})
+
