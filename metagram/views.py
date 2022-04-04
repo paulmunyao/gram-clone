@@ -1,28 +1,41 @@
 from django.shortcuts import render
-from .forms import Inputform
+from .forms import Inputform, authenticate
 
 # Create your views here.
+
 
 def home(request):
     return render(request, "home.html")
 
+
 def login(request):
-    return render(request, "login.html")   
+    username = request.POST['username']
+    password = request.POST['password']
+    User = authenticate(username=username, password=password)
+    if User is not None:
+        # redirect to home page when user is logged in
+        return render(request, "home.html")
+        else:
+            # redirect to login page when user is not logged in
+            return render(request, "login.html", {'form': Inputform()})
+
 
 def signup(request):
-    return render(request, "signup.html")   
+    return render(request, "signup.html")
+
 
 def display(request):
-    return render(request, "display.html")    
+    return render(request, "display.html")
 
-def bio(request):    
-    return render(request, "bio.html")      
 
-def  get_user(request):
+def bio(request):
+    return render(request, "bio.html")
+
+
+def get_user(request):
     if request.method == "POST":
         form = Inputform(request.POST)
         if form.is_valid():
-            return render (request,"login.html",{'form':form})
+            return render(request, "login.html", {'form': form})
     else:
-        return render(request, "login.html", {'form':Inputform()})
-
+        return render(request, "login.html", {'form': Inputform()})

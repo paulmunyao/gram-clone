@@ -13,4 +13,9 @@ class User(models.Model):
         self.save()
 
     def delete_user(self):
-        self.delete()    
+        self.delete()   
+        
+        
+          
+
+
