@@ -18,9 +18,16 @@ def login(request):
         form = User()   
     return render(request, "login.html", {'form': form})
 
-
 def signup(request):
-    return render(request, "signup.html")
+    if request.method =="POST":
+        form = User(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,"signup.html")
+    else:
+        form = User()
+        
+    
 
 
 def display(request):
