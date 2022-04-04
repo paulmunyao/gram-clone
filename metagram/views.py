@@ -9,16 +9,14 @@ def home(request):
 
 
 def login(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    username = authenticate(username=username, password=password)
-    if User is not None:
-        login(request, User)
-        # redirect to home page when user is logged in
-        return render(request, "home.html")
+    if request.method == 'POST':
+        form = User(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, "login.html")
     else:
-    # redirect to login page when user is not logged in
-        return render(request, "login.html", {'form': User()})
+        form = User()   
+    return render(request, "login.html", {'form': form})
 
 
 def signup(request):
@@ -32,11 +30,3 @@ def display(request):
 def bio(request):
     return render(request, "bio.html")
 
-
-def get_user(request):
-    if request.method == "POST":
-        form = Inputform(request.POST)
-        if form.is_valid():
-            return render(request, "login.html", {'form': form})
-    else:
-        return render(request, "login.html", {'form': Inputform()})
