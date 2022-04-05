@@ -4,10 +4,6 @@ from .forms import Loginform, RegisterForm
 # Create your views here.
 
 
-def home(request):
-    return render(request, "home.html")
-
-
 def login(request):
     if request.method == 'POST':
         form = Loginform(request.POST)
@@ -16,10 +12,10 @@ def login(request):
             password = form.cleaned_data['password']
             user = authenticate(username=username, password=password)
             if user is not None:
-                return redirect(request, "display.html", {'form': form})
+                return redirect(request, "registration/login.html", {'form': form})
     else:
         form = Loginform()
-    return render(request, "login.html", {'form': form})
+    return render(request, "registration/login.html", {'form': form})
 
 
 def register(request):
@@ -33,8 +29,7 @@ def register(request):
     return render(request, "registration/signup.html", {'form': form})
 
 
-def display(request):
-    return render(request, "display.html")
+
 
 
 def bio(request):
