@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 h1 {
   font-family: "Grand Hotel";
   font-weight: bold;
