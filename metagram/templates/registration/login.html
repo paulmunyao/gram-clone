@@ -8,14 +8,12 @@
                 {%csrf_token%}
                 {{form.as_p}}
                 <input type="submit" value="Login">
-                <p>Don't have an account ?Sign up</p><br><br>
+                <p>Don't have an account ?<a href="{% url 'signup'%}">Sign Up</a></h2></p><br><br>
                 <p>Get the app</p>
                 {% load static %}
                 <img class="apple" src="{% static 'css/images/appstore.png' %jpg' %}" alt="My image">
                 <img class="apple" src="{% static 'css/images/playstore.png' %jpg' %}" alt="My image">
-
             </form>
-
         </div>
     </div>
 </div>

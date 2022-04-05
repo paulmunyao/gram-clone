@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<div class="container mt-5" id="pam">
     <div class="row">
         <div class="col-md-12">
             <h1>Instagram</h1>
@@ -9,7 +9,7 @@
                 {%csrf_token%}
                 {{form.as_p}}
                 <input type="submit" value="signup">
-                <p>Already have an account ?Login in</p><br><br>
+                <p>Already have an account ?<a href="{% url 'login'%}">login</a></p><br><br>
             </form>
         </div>
     </div>

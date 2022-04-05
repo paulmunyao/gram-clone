@@ -28,3 +28,8 @@ p {
   height: 30px;
   width: 100px;
 }
+
+#pam{
+  font-family: Raleway;
+  list-style: none;
+}
