@@ -1,4 +1,4 @@
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -17,19 +17,26 @@ p {
   margin-left: 400px;
 }
 
-.pic{
+.pic {
   height: 500px;
   width: 500px;
   margin-left: 400px;
-  margin-top:-500px;
+  margin-top: -500px;
 }
 
-.apple{
+.apple {
   height: 30px;
   width: 100px;
 }
 
-#pam{
+#pam {
   font-family: Raleway;
   list-style: none;
+  margin-left: 200px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 1000px;
+  margin-left: 400px;
 }
