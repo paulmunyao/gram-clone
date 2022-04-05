@@ -13,7 +13,7 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, "login.html", {'form': form})
+            return render(request, "display.html", {'form': form})
     else:
         form = LoginForm()   
     return render(request, "login.html", {'form': form})
@@ -23,7 +23,7 @@ def signup(request):
         form = User(request.POST)
         if form.is_valid():
             form.save()
-            return render(request,"signup.html",{'form':form})
+            return render(request,"login.html",{'form':form})
     else:
         form = User()
         
