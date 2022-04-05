@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import LoginForm,Signupform
+from .forms import LoginForm, Signupform
 
 # Create your views here.
 
@@ -15,19 +15,19 @@ def login(request):
             form.save()
             return render(request, "display.html", {'form': form})
     else:
-        form = LoginForm()   
+        form = LoginForm()
     return render(request, "login.html", {'form': form})
 
+
 def signup(request):
-    if request.method =="POST":
-        form = User(request.POST)
+    if request.method == "POST":
+        form = Signupform(request.POST)
         if form.is_valid():
             form.save()
-            return render(request,"login.html",{'form':form})
+            return render(request, "login.html", {'form': form})
     else:
-        form = User()
-        
-    
+        form = Signupform()
+    return render(request, "signup.html", {'form': form})
 
 
 def display(request):
@@ -36,4 +36,3 @@ def display(request):
 
 def bio(request):
     return render(request, "bio.html")
-
