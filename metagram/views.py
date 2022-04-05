@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import User, authenticate,login
+from .forms import LoginForm,Signupform
 
 # Create your views here.
 
@@ -10,12 +10,12 @@ def home(request):
 
 def login(request):
     if request.method == 'POST':
-        form = User(request.POST)
+        form = LoginForm(request.POST)
         if form.is_valid():
             form.save()
             return render(request, "login.html", {'form': form})
     else:
-        form = User()   
+        form = LoginForm()   
     return render(request, "login.html", {'form': form})
 
 def signup(request):
