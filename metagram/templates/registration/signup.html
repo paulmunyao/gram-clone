@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Instagram</h1>
+            <p>Sign up to see photos and videos from your friends.</p>
+            <form method="POST">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="signup">
+                <p>Already have an account ?Login in</p><br><br>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
