@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
+from .models import images
 # Create your views here.
 
 
@@ -20,13 +21,6 @@ def display(request):
 
 @login_required(login_url='login/')
 def home(request):
-    return render(request, "home.html")
+    posts = images.objects.all()
+    return render(request, "home.html", {'images': posts})
 
-
-
-def bio(request):
-    return render(request, "bio.html")
-
-
-def logout(request):
-    return render(request, "login.html")

@@ -11,4 +11,12 @@
                     href="{% url 'login'%}">Login</a></h1>{% endif %}
         </div>
     </div>
+</div>
+<ul>
+    {% for image in images %}
+    <li>
+        <img src="{{ image.image.url }}" alt="{{ image.imagename }}">
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
