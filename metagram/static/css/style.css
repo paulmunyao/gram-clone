@@ -1,4 +1,9 @@
 h1 {
   font-family:"Grand Hotel";
+ log  font-weight:bold;
   font-size:30px;
+}
+
+p{
+  font-family:Raleway;
 }
