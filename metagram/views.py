@@ -35,3 +35,7 @@ def display(request):
     
 def bio(request):
     return render(request, "bio.html")
+
+def logout(request):
+    return render(request, "login.html")
+    
