@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container text-center mt-5">
+<div class="container text-center mt-5" id="tog">
     <div class="row">
         <div class="col-md-12">
             <h1>Instagram</h1>
@@ -11,7 +11,10 @@
                 <p>Don't have an account ?Sign up</p><br><br>
                 <p>Get the app</p>
             </form>
+
         </div>
     </div>
 </div>
+{% load static %}
+<img class="pic" src="{% static 'css/images/reels.jpg' %}" alt="My image">
 {% endblock %}
