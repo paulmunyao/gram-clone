@@ -1,4 +1,5 @@
 from django import forms
+from .models import User
 
 class Signupform(forms.Form):
     email = forms.EmailField(label='email', max_length=100)
