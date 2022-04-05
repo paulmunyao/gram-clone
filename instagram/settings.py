@@ -76,10 +76,12 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': 'Meta',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'meta',
         'USER': 'postgres',
         'PASSWORD': 'Access',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
