@@ -77,3 +77,8 @@ form.example button {
   border-left: none;
   cursor: pointer;
 }
+
+.log{
+  margin-left:1350px;
+  margin-bottom: -100px;
+}
