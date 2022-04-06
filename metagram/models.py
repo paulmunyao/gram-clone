@@ -9,7 +9,7 @@ class images(models.Model):
     image_name = models.CharField(max_length=50)
     image_caption = models.CharField(max_length=50)
     likes = models.ManyToManyField(User, related_name='likes')
-    comments = models.ForeignKey(User, on_delete=models.CASCADE)
+    comments = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
 
     def save_image(self):
         self.save()
@@ -48,13 +48,4 @@ class profile(models.Model):
     def delete_profile(self):
         self.delete()
 
-    @classmethod
-    def search_profile(cls, search_term):
-        profiles = cls.objects.filter(
-            profile_user__username__icontains=search_term)
-        return profiles
-
-    @classmethod
-    def get_profile_by_id(cls, id):
-        profile = cls.objects.get(profile_user__id=id)
-        return profile
+  
