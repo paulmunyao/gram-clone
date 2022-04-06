@@ -9,7 +9,7 @@
 
     </div>
 </div>
-<div class="log">
+<div id="log">
     {% if user.is_authenticated%}<h1><a href="{% url 'logout'%}">Logout</a></h1>{% else %}<h1><a
             href="{% url 'login'%}">Login</a></h1>{% endif %}
 </div>
