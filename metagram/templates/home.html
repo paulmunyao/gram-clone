@@ -4,23 +4,27 @@
     <div class="row">
         <div class="col-md-12">
             <h3 class="mt-5" id="inst">Instagram</h3>
-
             {% if user.is_authenticated%}<h1><a href="{% url 'logout'%}">Logout</a></h1>{% else %}<h1><a
                     href="{% url 'login'%}">Login</a></h1>{% endif %}
         </div>
     </div>
 </div>
 
-<div class="container col-md-6 d-flex flex-wrap mx-auto justify-content-between">
-{% for image in images %}
-<div class="container" >
-    <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.imagename }}">
-    <div class="container">
-        <h3 id="myfont">"{{ image.image_name }}"</h3>
-        <p>"{{ image.image_caption }}"</p>
-    </div>
-</div>
+<form class="example" action="" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
 
-{% endfor %}
+<div class="container col-md-6 d-flex flex-wrap mx-auto justify-content-between">
+    {% for image in images %}
+    <div class="container">
+        <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.imagename }}">
+        <div class="container">
+            <h3 id="myfont">"{{ image.image_name }}"</h3>
+            <p>"{{ image.image_caption }}"</p>
+        </div>
+    </div>
+
+    {% endfor %}
 </div>
 {% endblock %}
