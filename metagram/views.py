@@ -24,3 +24,4 @@ def home(request):
     posts = images.objects.all()
     return render(request, "home.html", {'images': posts})
 
+
