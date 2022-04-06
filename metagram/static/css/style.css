@@ -41,7 +41,14 @@ p {
   margin-left: 400px;
 }
 
-h3{
+#myfont{
+  font-family: "Grand Hotel";
+  font-weight: normal;
+  font-size: 40px;
+  margin-top:30px;
+}
+
+#inst{
   font-family: "Grand Hotel";
   font-weight: normal;
   font-size: 40px;
