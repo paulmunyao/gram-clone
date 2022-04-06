@@ -8,8 +8,7 @@ class images(models.Model):
     image = CloudinaryField('image')
     image_name = models.CharField(max_length=50)
     image_caption = models.CharField(max_length=50)
-    likes = models.ManyToManyField(User, related_name='likes')
-    comments = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    
 
     def save_image(self):
         self.save()
